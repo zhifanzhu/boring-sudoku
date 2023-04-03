@@ -36,7 +36,13 @@ function Table(props) {
       props.setSolverState(SOLVABLE);
     } else {
       props.setSolverState(UNSOLVABLE);
-      const solBoard = new Array(9).fill(null).map(() => new Array(9).fill('X'));
+      const solBoard = Array.from({length: 9}, () => Array.from({length: 9}, () => null));
+      for (let i = 0; i < 9; i++) {
+        for (let j = 0; j < 9; j++) {
+            solBoard[i][j] = newBoard[i][j];
+        }
+      }
+      solBoard[row][col] = 'X';
       props.setSolBoard(solBoard);
     }
   }
@@ -48,7 +54,9 @@ function Table(props) {
     for (let j = 0; j < 9; j++) {
       const cell = props.board[i][j] === null ? '' : props.board[i][j];
       row.push(<td key={i*9+j}>
-        <input onChange={onChange} type="text" size="1" maxLength="1" value={cell}/>
+        <input onChange={onChange} type="number" size="1" 
+          maxLength="1" 
+          value={cell}/>
       </td>
       )
     }
@@ -60,10 +68,24 @@ function Table(props) {
 // Output board is static
 function StaticTable(props) {
   const table = [];
+  let color;
   for (let i = 0; i < 9; i++) {
     const row = [];
     for (let j = 0; j < 9; j++) {
-      row.push(<td key={i*9+j}>{props.board[i][j]}</td>)
+      let cell;
+      if (props.board[i][j] === null) {
+        cell = '';
+        color = 'black';
+      } else if (props.board[i][j] === 'X') {
+        cell = 'X';
+        color = 'red';
+      } else {
+        cell = props.board[i][j];
+        color = 'black';
+      }
+      row.push(<td key={i*9+j} style={{color: color}}>
+        {props.board[i][j]}
+        </td>)
     }
     table.push(<tr key={i}>{row}</tr>);
   }
@@ -134,7 +156,9 @@ function App(props) {
         setSolverState={setSolverState}
         solver={solver}></Table>
       <b>Solution:</b><br></br>
-      Status: {solver_state}
+      <p style={{color: solver_state === SOLVABLE ? 'green' : 'red'}}>
+        Status: {solver_state}
+      </p>
       <StaticTable board={solBoard}></StaticTable>
     </div>
   );

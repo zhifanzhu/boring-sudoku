@@ -3,7 +3,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # TODO
-[ ] paste
+[ ] Solution Write back
+[ ] NxN
+
+<del>Toogle immediate</del>
+<del>regex paste for 3x3</del> Not possible: don't know the structure
 
 # Strategy
 

@@ -10,7 +10,9 @@
 
 input {
   border: 0;
+  width: 25px;
   font-size: large;
+  text-align: right;
 }
 
 table {
