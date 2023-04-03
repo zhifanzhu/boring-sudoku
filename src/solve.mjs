@@ -37,7 +37,8 @@ class Solver {
             let bi = Math.floor(i/3), bj = Math.floor(j/3);
             if (this.get_blk(bi, bj, c) || this.get_row(i, c) || this.get_col(j, c))
                 continue;
-            this.B[i][j] = c;
+            // trial
+            this.B[i][j] = c + 1;
             this.set_blk(bi, bj, c, 1);
             this.set_row(i, c, 1);
             this.set_col(j, c, 1);
@@ -52,6 +53,7 @@ class Solver {
     }
 
     // Valid cell: int 1-9, or null
+    // board[i][j], this.B uses 1-9. For accessing this.s, use 0-8
     solve(board) {
         let solvable = true;
         this.s.clear();
@@ -66,13 +68,13 @@ class Solver {
             let i = Math.floor(t / 9), j = t % 9;
             if (board[i][j] === EMPTY)
                 continue;
-            let c = board[i][j];
+            let c = board[i][j] - 1;
             let bi = Math.floor(i/3), bj = Math.floor(j/3);
             if (this.get_blk(bi, bj, c) || this.get_row(i, c) || this.get_col(j, c)) {
                 solvable = false;
                 break;
             }
-            this.B[i][j] = c;
+            this.B[i][j] = c + 1;
             this.set_blk(bi, bj, c, 1);
             this.set_row(i, c, 1);
             this.set_col(j, c, 1);

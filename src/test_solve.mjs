@@ -23,6 +23,20 @@ function test_solvable() {
   }
 }
 
+function test_solvable2() {
+  // generate 9x9 empty board
+  let board = Array.from({length: 9}, () => Array.from({length: 9}, () => null));
+  board[0][0] = 1;
+  console.log(board);
+
+  const solver = new Solver();
+  let r = solver.solve(board);
+  console.log('Result')
+  for (let i = 0; i < 9; ++i) {
+    console.log(r[i].join(' '));
+  }
+}
+
 function test_unsolvable() {
   // generate 9x9 empty board
   let board = Array.from({length: 9}, () => Array.from({length: 9}, () => null));
@@ -36,4 +50,5 @@ function test_unsolvable() {
 }
 
 test_solvable();
+test_solvable2();
 test_unsolvable();
