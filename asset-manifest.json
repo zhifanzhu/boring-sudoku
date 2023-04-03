@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/boring-sudoku/static/css/main.75762061.css",
-    "main.js": "/boring-sudoku/static/js/main.2950b874.js",
+    "main.js": "/boring-sudoku/static/js/main.2bd3ca83.js",
     "index.html": "/boring-sudoku/index.html",
     "main.75762061.css.map": "/boring-sudoku/static/css/main.75762061.css.map",
-    "main.2950b874.js.map": "/boring-sudoku/static/js/main.2950b874.js.map"
+    "main.2bd3ca83.js.map": "/boring-sudoku/static/js/main.2bd3ca83.js.map"
   },
   "entrypoints": [
     "static/css/main.75762061.css",
-    "static/js/main.2950b874.js"
+    "static/js/main.2bd3ca83.js"
   ]
 }
