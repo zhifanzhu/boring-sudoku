@@ -120,7 +120,9 @@ function App(props) {
     setBoard(Array.from({length: 9}, () => Array.from({length: 9}, () => null)));
   };
   const set_random_board = () => {
-    setBoard(generate_random_board());
+    const rnd_board = generate_random_board();
+    setBoard(rnd_board);
+    setSolBoard(rnd_board);
   };
 
   return (
