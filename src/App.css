@@ -8,12 +8,31 @@
   }
 }
 
+@media (min-width: 600px) {
+  input {
+    border: 0;
+    width: 30px;
+    font-size: large;
+    text-align: right;
+  }
+}
+
+/* Apply these styles when the device width is less than 600px */
+@media (max-width: 599px) {
+  input {
+    border: 0;
+    width: 15px;
+    font-size: medium;
+    text-align: center;
+  }
+}
+/* 
 input {
   border: 0;
-  width: 25px;
-  font-size: large;
+  width: 20px;
+  font-size: medium;
   text-align: right;
-}
+} */
 
 table {
   margin:1em auto;

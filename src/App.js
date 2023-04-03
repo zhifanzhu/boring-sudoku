@@ -84,7 +84,7 @@ function StaticTable(props) {
         color = 'black';
       }
       row.push(<td key={i*9+j} style={{color: color}}>
-        {props.board[i][j]}
+        {cell}
         </td>)
     }
     table.push(<tr key={i}>{row}</tr>);
