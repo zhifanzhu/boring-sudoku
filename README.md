@@ -3,9 +3,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # TODO
-[ ] Solution Write back
-[ ] NxN
+[ ] Dancing Links
 
+<del>Solution Write back</del>
 <del>Toogle immediate</del>
 <del>regex paste for 3x3</del> Not possible: don't know the structure
 
